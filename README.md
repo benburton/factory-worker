@@ -2,6 +2,8 @@
 
 factory-worker is a library designed to make building fixture data easier in Scala. It is inspired by, and named in reference to, [thoughtbot](http://www.thoughtbot.com/community)'s [factory_girl](https://github.com/thoughtbot/factory_girl).
 
+**NOTE**: After a bit of research, I've put off this project until Scala macros are stable in Scala 2.11.
+
 ### Install
 
 Add factory-worker to your SBT dependencies:
