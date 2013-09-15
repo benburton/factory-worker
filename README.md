@@ -17,11 +17,9 @@ Run sbt compile
 To start using factory-worker, define an object extending Factory[T] with T being the type of object you want FactoryWorker to produce. This object should include method declarations whose names correspond to the content of the objects you'd like to build. For example, the following Factory[BlogPost] example builds an "unpublished" BlogPost:
 
     object BlogPostFactory extends Factory[BlogPost] {
-
       def unpublished: BlogPost {
         new BlogPost(published = false)
       }
-
     }
 
 
@@ -37,10 +35,9 @@ You can then use the build method to construct objects of the provided type:
 
 You might use a FactoryWorker in the context of, for example, a [specs2](http://etorreborre.github.io/specs2/) Specification as follows:
 
-    class BlogPostSpec extends Specification with FactoryWorker[BlogPostFactory] {
+    class BlogPostSpec extends Specification {
       
       "BlogPost" should {
-        
         "publish" should {
           
           "return BlogPost with some publishedAt" in {
@@ -52,11 +49,7 @@ You might use a FactoryWorker in the context of, for example, a [specs2](http://
               case Some(date: Date) => success
               case _ failure
             }
-
           }
-        
         }
-        
       }
-      
     }
