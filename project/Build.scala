@@ -14,8 +14,14 @@ object Build extends sbt.Build {
       name := "factory-worker",
       organization := "com.benburton",
       version := libVersion,
-      scalaVersion := "2.10.2"
+      scalaVersion := "2.10.2",
+      libraryDependencies ++= Dependencies.all
     )
   )
+  
+  object Dependencies {
+    val specs2 = "org.specs2" %% "specs2" % "2.2" % "test"
+    val all = Seq(specs2)
+  }
   
 }
