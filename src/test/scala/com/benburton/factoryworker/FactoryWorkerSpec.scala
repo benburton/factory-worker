@@ -24,7 +24,7 @@ class FactoryWorkerSpec extends Specification {
     "build" should {
 
       "produce instance of appropriate class" in {
-        val factoryWorker = new FactoryWorker(Seq(BlogPostFactory))
+        val factoryWorker = FactoryWorker(Seq(BlogPostFactory))
         val unpublishedBlogPost = factoryWorker.build[BlogPost]("unpublished")
         unpublishedBlogPost.getClass.toString + "$" === BlogPost.getClass.toString
       }

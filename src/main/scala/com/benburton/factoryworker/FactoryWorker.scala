@@ -1,6 +1,6 @@
 package com.benburton.factoryworker
 
-class FactoryWorker(factories: Seq[Factory[_]]) {
+case class FactoryWorker(factories: Seq[Factory[_]]) {
 
   def build[T <: Any](name: String, arguments: AnyRef*) = {
 
